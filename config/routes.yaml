@@ -9,3 +9,7 @@ login:
 logout:
     path: /logout
     controller: App\Controller\SecurityController::logout
+
+product:
+    path: /product
+    controller: App\Controller\ProductController::newProduct
