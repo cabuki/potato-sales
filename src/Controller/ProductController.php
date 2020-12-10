@@ -11,9 +11,18 @@ class ProductController extends AbstractController
 {
     public function newProduct(): Response
     {
+        // Create an empty entity
         $product = new Product();
 
-        $form = $this->createForm(ProductType::class, $product);
+        // Create the form
+        $form = $this->createForm(
+            ProductType::class,
+            $product,
+            [
+                'action' => $this->generateUrl('api_product'),
+                'attr' => ['id' => 'product'] // Set the id so the form can be manipulated by JS
+            ]
+        );
 
         return $this->render(
             'new_product.html.twig',

@@ -3,10 +3,14 @@
 {% block title %}{{ pagename }}{% endblock %}
 
 {% block body %}
-<form method="post">
     <h1 class="h3 mb-3 font-weight-normal">New Product</h1>
 
     {{ form(form) }}
-</form>
+
+    <div id="message"></div>
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('product') }}
+{% endblock %}
