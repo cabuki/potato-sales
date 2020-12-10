@@ -9,7 +9,11 @@
     </head>
     <body>
         {% include 'header.html.twig' %}
+        <main class="container">
+            <h1>{{ pagename }}</h1>
+
         {% block body %}{% endblock %}
+        </main>
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}

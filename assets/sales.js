@@ -16,7 +16,7 @@ $(document).ready(
                 sales.html(d.data);
 
                 // Build the table with headers
-                let table = $('<table id="sales_data"></table>');
+                let table = $('<table id="sales_data" class="display"></table>');
                 let thead = $('<thead></thead>');
                 let tbody = $('<tbody></tbody>');
                 let tr1 = $('<tr></tr>');
@@ -78,8 +78,10 @@ $(document).ready(
                 // Setup datatables to handle the data
                 table.DataTable(
                     {
-                        data: data,
-                        columns: cols
+                        "data": data,
+                        "columns": cols,
+                        "paging": false,
+                        "searching": false,
                     }
                 )
             }

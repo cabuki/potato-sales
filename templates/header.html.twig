@@ -1,20 +1,23 @@
-<div class="mb-3">
-    <a href="{{ path('index') }}">Home</a>
-</div>
-<div class="mb-3">
-    {{ pagename }}
-</div>
-<div class="mb-3">
-    {% if app.user %}
-        {{ app.user.name }}
-    {% endif %}
-</div>
-<div class="mb-3">
-    {% if app.user %}
-        <a href="{{ path('logout') }}">Log Out</a>
-    {% else %}
-        {% if app.request.get('_route') != 'login' %}
-            <a href="{{ path('login') }}">Log In</a>
-        {% endif %}
-    {% endif %}
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a href="{{ path('index') }}" class="nav-item d-flex">Home</a>
+        <div class="nav-item">
+            {% if app.user %}
+                <span class="nav-link">
+                    {{ app.user.name }}
+                </span>
+            {% endif %}
+        </div>
+        <div class="nav-item">
+            {% set link_url = 'logout' %}
+            {% set link_txt = 'Log Out' %}
+            {% if not app.user %}
+                {% set link_url = 'login' %}
+                {% set link_txt = 'Log In' %}
+            {% endif %}
+            {% if app.request.get('_route') != 'login' %}
+                <a class="nav-link" href="{{ path(link_url) }}">{{ link_txt }}</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>

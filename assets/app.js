@@ -8,13 +8,14 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 
-// start the Stimulus application
-import './bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'datatables.net-bs4/css/dataTables.bootstrap4.min.css';
 
 
 const $ = require('jquery');
 require('bootstrap');
 require('bootstrap-datepicker');
+require( 'datatables.net-bs4' )();
 
 $(document).ready(function() {
     $('.js-datepicker').datepicker({
