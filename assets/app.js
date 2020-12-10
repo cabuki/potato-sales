@@ -9,6 +9,7 @@
 import './styles/app.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'datatables.net-dt/css/jquery.dataTables.min.css';
 import 'datatables.net-bs4/css/dataTables.bootstrap4.min.css';
 
 
