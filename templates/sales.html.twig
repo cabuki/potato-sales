@@ -1,10 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div id="sales"></div>
+<div id="sales" data-url="{{ url }}"></div>
 {% endblock %}
 
 {% block title %}
 {{ pagename }}
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('sales') }}
+{% endblock %}

@@ -18,7 +18,8 @@ class SalesController extends AbstractController
         return $this->render(
             'sales.html.twig',
             [
-                'pagename' => 'Sales'
+                'pagename' => 'Sales',
+                'url' => $this->generateUrl('api_sales')
             ]
         );
     }

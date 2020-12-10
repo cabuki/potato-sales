@@ -18,7 +18,7 @@ class SalesController extends AbstractController
     public function data(): Response
     {
         // Get the data from the resources directory
-        $data = file_get_contents($this->resources . '/potato_sales.json');
+        $data = json_decode(file_get_contents($this->resources . '/potato_sales.json'));
 
         return new JsonResponse(["data" => $data]);
     }
