@@ -13,3 +13,7 @@ logout:
 product:
     path: /product
     controller: App\Controller\ProductController::newProduct
+
+sales:
+    path: /sales
+    controller: App\Controller\SalesController::sales
