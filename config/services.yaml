@@ -10,6 +10,7 @@ parameters:
             lastname: Salesman
             password: '$argon2id$v=19$m=65536,t=4,p=1$9rEEmiezz2Nt4AaQV2P8YQ$LxMLkSqvHF0nUJTQB33eo/QsiFUrTD4RpNjXF9GWNds'
             roles: [ 'ROLE_USER' ]
+    app.resources: '%kernel.project_dir%/resources'
 
 services:
     # default configuration for services in *this* file
@@ -39,3 +40,7 @@ services:
     App\Security\UserProvider:
         arguments:
             $users: '%app.users%'
+
+    App\Controller\API\SalesController:
+        arguments:
+            $resources: '%app.resources%'

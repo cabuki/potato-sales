@@ -17,3 +17,13 @@ product:
 sales:
     path: /sales
     controller: App\Controller\SalesController::sales
+
+api_product:
+    path: /api/product
+    controller: App\Controller\API\ProductController::save
+    methods: POST
+
+api_sales:
+    path: /api/sales
+    controller: App\Controller\API\SalesController::data
+    methods: GET
