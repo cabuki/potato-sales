@@ -8,6 +8,10 @@
 </div>
 <div class="mb-3">
     {% if app.user %}
-        <a href="{{ path('logout') }}">Logout</a>
+        <a href="{{ path('logout') }}">Log Out</a>
+    {% else %}
+        {% if app.request.get('_route') != 'login' %}
+            <a href="{{ path('login') }}">Log In</a>
+        {% endif %}
     {% endif %}
 </div>
