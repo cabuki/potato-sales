@@ -4,6 +4,12 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    app.users:
+        potato:
+            firstname: Potato
+            lastname: Salesman
+            password: '$argon2id$v=19$m=65536,t=4,p=1$9rEEmiezz2Nt4AaQV2P8YQ$LxMLkSqvHF0nUJTQB33eo/QsiFUrTD4RpNjXF9GWNds'
+            roles: [ 'ROLE_USER' ]
 
 services:
     # default configuration for services in *this* file
@@ -29,3 +35,7 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Security\UserProvider:
+        arguments:
+            $users: '%app.users%'
